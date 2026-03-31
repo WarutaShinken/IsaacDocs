@@ -77,12 +77,12 @@ ___
 ___
 ### Get·Null·Effect () {: aria-label='Functions' }
 [ ](#){: .const .tooltip .badge } [ ](#){: .alldlc .tooltip .badge }
-#### const [TemporaryEffect](TemporaryEffect.md) GetNullEffect ( [ItemConfigNullItemID](ItemConfig_Item.md) NullId ) {: .copyable aria-label='Functions' }
+#### const [TemporaryEffect](TemporaryEffect.md) GetNullEffect ( [NullItemID](enums/NullItemID.md) NullId ) {: .copyable aria-label='Functions' }
 
 ___
 ### Get·Null·Effect·Num () {: aria-label='Functions' }
 [ ](#){: .alldlc .tooltip .badge }
-#### int GetNullEffectNum ( [ItemConfigNullItemID](ItemConfig_Item.md) NullId ) {: .copyable aria-label='Functions' }
+#### int GetNullEffectNum ( [NullItemID](enums/NullItemID.md) NullId ) {: .copyable aria-label='Functions' }
 
 ___
 ### Get·Trinket·Effect () {: aria-label='Functions' }
@@ -102,7 +102,7 @@ ___
 ___
 ### Has·Null·Effect () {: aria-label='Functions' }
 [ ](#){: .alldlc .tooltip .badge }
-#### boolean HasNullEffect ( [ItemConfigNullItemID](ItemConfig_Item.md) NullId ) {: .copyable aria-label='Functions' }
+#### boolean HasNullEffect ( [NullItemID](enums/NullItemID.md) NullId ) {: .copyable aria-label='Functions' }
 
 ___
 ### Has·Trinket·Effect () {: aria-label='Functions' }
@@ -117,7 +117,7 @@ Count = -1 removes all instances of the effect
 ___
 ### Remove·Null·Effect () {: aria-label='Functions' }
 [ ](#){: .reporplus .tooltip .badge }
-#### void RemoveNullEffect ( [ItemConfigNullItemID](ItemConfig_Item.md) NullId, int Count = 1 ) {: .copyable aria-label='Functions' }
+#### void RemoveNullEffect ( [NullItemID](enums/NullItemID.md) NullId, int Count = 1 ) {: .copyable aria-label='Functions' }
 Count = -1 removes all instances of the effect
 ___
 ### Remove·Trinket·Effect () {: aria-label='Functions' }
