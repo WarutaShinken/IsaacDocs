@@ -1989,7 +1989,7 @@ Player stat - Only change this in a callback to MC_EVALUATE_CACHE. How long must
     end
 
     function set_fire_rate(player, fire_rate)
-        fire_rate = math.min(fire_rate, FIRE_RATE_CAP) -- Apply fire rate cap.
+        local fire_rate = math.min(fire_rate, FIRE_RATE_CAP) -- Apply fire rate cap.
         player.MaxFireDelay = 30 / fire_rate - 1
     end
 
