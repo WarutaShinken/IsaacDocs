@@ -1969,12 +1969,37 @@ ___
 Player stat - Only change this in a callback to MC_EVALUATE_CACHE.  **This is equal to the Luck Stat.**  Better luck generally means better random events.
 ___
 ### Max·Fire·Delay {: aria-label='Variables' }
-[ ](#){: .alldlc .tooltip .badge }
+[ ](#){: .abp .tooltip .badge }
+#### int MaxFireDelay  {: .copyable aria-label='Variables' }
+[ ](#){: .reporplus .tooltip .badge }
 #### float MaxFireDelay  {: .copyable aria-label='Variables' }
-Player stat - Only change this in a callback to MC_EVALUATE_CACHE.  **This is equal to the Tears Stat.**  How long between each tear can spawn?
+Player stat - Only change this in a callback to MC_EVALUATE_CACHE. How long must the player wait between each firing each tear?
 
-???- note "Version Difference"
-	In the Afterbirth+ version of the modding api, this variable is an integer
+???+ info "Info"
+    This stat is equal to `30 / tears stat - 1`.
+
+???- example "Example Code"
+    This code converts between max fire delay and tears stat and increases fire rate by 1. Note that this applies after the soft tear cap and tear multipliers such as the ones from Polyphemus and Soy Milk.
+
+    ```lua
+    FIRE_RATE_CAP = 120
+
+    function get_fire_rate(player)
+	    return 30 / (player.MaxFireDelay + 1)
+    end
+
+    function set_fire_rate(player, fire_rate)
+        fire_rate = math.min(fire_rate, FIRE_RATE_CAP) -- Apply fire rate cap.
+        player.MaxFireDelay = 30 / fire_rate - 1
+    end
+
+    function mod:OnEvaluateFireRate(player, flag)
+        local old_fire_rate = get_fire_rate(player)
+        set_fire_rate(player, old_fire_rate + 1)
+    end
+
+    mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.OnEvaluateFireRate, CacheFlag.CACHE_FIREDELAY)
+    ```
 
 ___
 ### Move·Speed {: aria-label='Variables' }
